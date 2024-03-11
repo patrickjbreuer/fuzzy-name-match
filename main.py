@@ -191,4 +191,4 @@ with app:
 # sharable
 # app.queue(max_size=1).launch(share=True)
 # access from docker container
-app.queue(max_size=1).launch(server_name='0.0.0.0', server_port=7878)
+app.queue(max_size=1).launch()
