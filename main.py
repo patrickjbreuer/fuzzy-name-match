@@ -98,7 +98,7 @@ def fuzzy_match(query: pd.DataFrame, q_name_norm: str,
         try:
             nn, score, _ = process.extractOne(x[q_name_norm], db[db_name_norm], scorer=fuzz.ratio)
             entity_id = db[db[db_name_norm]==nn][db_name_id]
-            entity_id = str(id.item()) if len(id)==1 else ', '.join(str(x) for x in entity_id.tolist())
+            entity_id = str(entity_id.item()) if len(entity_id)==1 else ', '.join(str(x) for x in entity_id.tolist())
             name = db[db[db_name_norm]==nn][db_name]
             name = name.item() if len(name)==1 else ', '.join(str(x) for x in name.tolist())
             return (nn, score, entity_id, name)
